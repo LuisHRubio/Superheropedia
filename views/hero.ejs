@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row my-3 pb-4">
+            <div class="col-lg-6">
+                <form method="POST" action="/search" id="search">
+                    <input type="text" placeholder="Type a hero's name!" name="nombre" autocomplete="off" class="inputHeroe">
+                    <input type="Submit" value="Search Hero" class="btn botonIndex">
+                </form>
+            </div>
+            <div class="col-md-6">
+                <form id="id" method="POST" action="/id">
+                    <div class="">
+                        <input type="text" placeholder="ID" name="id" autocomplete="off" class="inputHeroe">
+                        <input type="Submit" value="Search ID" class="btn botonIndex">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="text-center my-4 row">
+            <div class="col-md-8">
+                <div>
+                    <img src="<%= datos.image.url %>" id="icon" class="iconHero">
+                </div>
+                <div class="tarjetaGrande my-4 row" style="margin-left: auto; margin-right: auto;">
+                    <p id="name" class="my-3" style="font-size: 28px;font-weight: bold"><%= datos.name %></p>
+                    <p id="name" class="my-1" style="font-size: 20px;font-weight: normal">ID: <%= datos.id %></p>
+                    <p id="name" class="my-1" style="font-size: 20px;font-weight: normal">Name: <%= datos.biography['full-name'] %></p>
+                    <p id="name" class="my-1" style="font-size: 20px;font-weight: normal">Publisher: <%= datos.biography.publisher %></p>
+                    <p id="name" class="my-1" style="font-size: 20px;font-weight: normal">Occupation: <%= datos.work.occupation %></p>
+                    <p id="name" class="my-1" style="font-size: 20px;font-weight: normal">Group affiliation: <%= datos.connections['group-affiliation'] %></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row card rounded-3 mb-4 tarjeta">
+                    <p id="name" class="my-1" style="font-size: 20px;font-weight: bold">Power Stats:</p>
+                    <div class="row">
+                        <p id="name" class="my-1 col-6" style="font-size: 20px;font-weight: normal">Intelligence <br><%= datos.powerstats.intelligence %></p>
+                        <p id="name" class="my-1 col-6" style="font-size: 20px;font-weight: normal">Strength <br><%= datos.powerstats.strength %></p>
+                    </div>
+                    <div class="row">
+                        <p id="name" class="my-1 col-6" style="font-size: 20px;font-weight: normal">Speed <br><%= datos.powerstats.speed %></p>
+                        <p id="name" class="my-1 col-6" style="font-size: 20px;font-weight: normal">Durability <br><%= datos.powerstats.durability %></p>
+                    </div>
+                    <div class="row">
+                        <p id="name" class="my-1 col-6" style="font-size: 20px;font-weight: normal">Power <br><%= datos.powerstats.power %></p>
+                        <p id="name" class="my-1 col-6" style="font-size: 20px;font-weight: normal">Combat <br><%= datos.powerstats.combat %></p>
+                    </div>
+
+                </div>
+                <div class="row card rounded-3mb-2 tarjeta">
+                    <p id="name" class="my-1" style="font-size: 20px;font-weight: bold"><u>Biography:</u></p>
+                    <p id="name" class="my-1" style="font-size: 20px;font-weight: normal">Gender: <%= datos.appearance.gender %></p>
+                    <p id="name" class="my-1" style="font-size: 20px;font-weight: normal">Race: <%= datos.appearance.race %></p>
+                    <p id="name" class="my-1" style="font-size: 20px;font-weight: normal">Height: <%= datos.appearance.height[1] %></p>
+                    <p id="name" class="my-1" style="font-size: 20px;font-weight: normal">Weight: <%= datos.appearance.weight[1] %></p>
+                    <p id="name" class="my-1" style="font-size: 20px;font-weight: normal">Place of Birth: <%= datos.biography['place-of-birth'] %></p>
+                    <p id="name" class="my-1" style="font-size: 20px;font-weight: normal">Eye Color: <%= datos.appearance['eye-color'] %></p>
+                    <p id="name" class="my-1" style="font-size: 20px;font-weight: normal">Hair Color: <%= datos.appearance['hair-color'] %></p>
+                    <p id="name" class="my-1" style="font-size: 20px;font-weight: normal">Aliases: <ul style="list-style-position: inside;"><% datos.biography.aliases.forEach(alias =>{ %>
+                        <li><%= alias %></li>
+                        <% })%></ul></p>
+
+
+                </div>
+            </div>
+        </div>
+        <form action="/id" method="POST">
+            <button type="submit" name="id" value="<%= parseInt(datos.id)-1 %>" class="btn botonHeroe mb-2"><== Previous character</button>
+            <button type="submit" name="id" value="<%= parseInt(datos.id)+1 %>" class="btn botonHeroe mb-2">Next character ==></button>
+        </form>
+        <a href="/" class="btn botonIndex col-1 my-4" style="width: auto">Go Back</a>
+    </div>
+</body>
+</html>

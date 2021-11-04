@@ -1,0 +1,133 @@
+@font-face {
+    font-family: "ShakaPow";
+    src: url("./../fonts/ShakaPow.woff");
+}
+
+body{
+    font-family: Unispace;
+    background-image: url("./../images/bg.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 940px;
+
+}
+
+h1{
+    font-size: 60px;
+}
+
+.titulo{
+    width: 100%;
+}
+
+.botonIndex {
+    font-family: Unispace;
+    box-shadow: -4px 4px 0px 0px #ff0000;
+    background-image: url("./../images/degradadoAmarillo.png");
+    background-size: 500% 500%;
+    background-color: #ffc200;
+    border-radius:10px;
+    border:3px solid #000000;
+    display:inline-block;
+    cursor:pointer;
+    color:#000000;
+    font-size:18px;
+    padding:12px 12px;
+    text-decoration:none;
+
+}
+.botonIndex:hover {
+    background:linear-gradient(to bottom, #ffc400 5%, #ffea00 100%);
+    background-color:#ffc400;
+}
+.botonIndex:active {
+    position:relative;
+    top:1px;
+}
+
+.botonHeroe {
+    font-family: Unispace;
+    box-shadow: -4px 4px 0px 0px #4ad0ff;
+    background-image: url("./../images/degradadoGris.png");
+    background-size: 200% 500%;
+    background-color: #b9b9b9;
+    border-radius:10px;
+    border:3px solid #000000;
+    display:inline-block;
+    cursor:pointer;
+    color:#000000;
+    font-size:18px;
+    padding:12px 12px;
+    text-decoration:none;
+}
+.botonHeroe:hover {
+    background:linear-gradient(to bottom, #00d9ff 5%, #00bdda 100%);
+    background-color: #4ab7ff;
+}
+.botonHeroe:active {
+    position:relative;
+    top:1px;
+}
+
+.tarjeta{
+    width: 100%;
+    box-shadow: -4px 4px 0px 0px #ff0000;
+    background-image: url("./../images/degradadoAmarillo.png");
+    background-size: auto 100%;
+    background-color: #ffc200;
+    background-repeat: no-repeat;
+    border-radius:10px;
+    border:3px solid #000000;
+    display:inline-block;
+    color:#000000;
+    font-size:18px;
+    padding:12px 12px;
+    text-decoration:none;
+}
+
+.tarjetaGrande{
+    box-shadow: -4px 4px 0px 0px #ff0000;
+    background-image: url("./../images/degradadoAmarillo.png");
+    background-size: 100% auto;
+    background-color: #ffc200;
+    background-repeat: no-repeat;
+    border-radius:10px;
+    border:3px solid #000000;
+    display:inline-block;
+    color:#000000;
+    font-size:18px;
+    padding:12px 12px;
+    text-decoration:none;
+}
+
+.caja{
+    position: relative;
+    top:300px;
+}
+
+.catalogoImg{
+    border-radius: 30px;
+    width: 200px;
+    height: 300px;
+}
+
+.inputHeroe{
+    font-family: Unispace;
+    border:3px solid #000000;
+    position: relative;
+    top: 2px;
+    padding: 8px 20px;
+    margin: 8px 12px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: auto;
+}
+
+.iconHero{
+    border-radius: 40px;
+    max-height: 400px;
+    border: 3px solid black;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
